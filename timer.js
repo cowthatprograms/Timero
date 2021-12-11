@@ -71,14 +71,20 @@ function tick() {
 function startTimer() {
   ticking = true;
   clicked = true;
+  if (mode == 'focused') {
+    document.querySelector('body').style.backgroundColor = '#a7dbf2';
+  } else {
+    document.querySelector('body').style.backgroundColor = '#cfffe5';
+  }
 }
 
 function pauseTimer() {
   ticking = false;
+  document.querySelector('body').style.backgroundColor = '#f7b2ad';
 }
 
 function focusMode() {
-  document.querySelector('body').style.backgroundColor = '#a7dbf2';
+  document.querySelector('body').style.backgroundColor = '#ed9a9a';
   mode = 'focused';
   minutes = 25;
   seconds = 0;

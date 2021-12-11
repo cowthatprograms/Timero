@@ -86,19 +86,6 @@ button:active {
   background-color: #002a3d;
 }
 
-.end-button {
-  padding: 8px 16px;
-  background-color: #FFFFFF;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
-  color: #ff0000;
-  border-radius: 5vw;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  transition: 0.3s background-color;
-}
-
 #quote { 
   text-align: center;
   font-family: "Lato", sans-serif;
