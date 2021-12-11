@@ -13,7 +13,7 @@ onload = function() {
     totalNode.innerHTML = 'Total Time: ' + String(Math.floor(totalTime / 60)) + (totalTime % 60 < 10 ? ':0' : ':') + String(totalTime % 60);
     focusedNode.innerHTML = 'Focused Time: ' + String(Math.floor(focusedTime / 60)) + (focusedTime % 60 < 10 ? ':0' : ':') + String(focusedTime % 60);
     breakNode.innerHTML = 'Break Time: ' + String(Math.floor(breakTime / 60)) + (breakTime % 60 < 10 ? ':0' : ':') + String(breakTime % 60);
-    wastedNode.innerHTML = 'Wasted Time: ' +String(Math.floor(wastedTime / 60)) + (wastedTime % 60 < 10 ? ':0' : ':') + String(wastedTime % 60);
+    wastedNode.innerHTML = 'Wasted Time: ' + String(Math.floor(wastedTime / 60)) + (wastedTime % 60 < 10 ? ':0' : ':') + String(wastedTime % 60);
   }, 1000);
 
   let quoteNode = document.querySelector('#quote');
@@ -43,9 +43,10 @@ let wastedTime = 0; // when not focused nor on break
 let minutes = 25;
 let seconds = 0;
 let ticking = false;
+let clicked = false;
 
 function tick() {
-  totalTime++;
+  if (clicked) { totalTime++; }
   if (ticking) {
     if (seconds != 0) {
       seconds--;
@@ -63,12 +64,13 @@ function tick() {
       breakTime++;
     }
   } else {
-    wastedTime++;
+    if (clicked) { wastedTime++; }
   }
 }
 
 function startTimer() {
   ticking = true;
+  clicked = true;
 }
 
 function pauseTimer() {
@@ -76,15 +78,21 @@ function pauseTimer() {
 }
 
 function focusMode() {
+  document.querySelector('body').style.backgroundColor = '#a7dbf2';
   mode = 'focused';
   minutes = 25;
   seconds = 0;
+  timeNode.innerHTML = String(minutes) + (seconds < 10 ? ':0' : ':') + String(seconds);
+  titleNode.innerHTML = String(minutes) + (seconds < 10 ? ':0' : ':') + String(seconds);
   ticking = false;
 }
 
 function breakMode() {
+  document.querySelector('body').style.backgroundColor = '#cfffe5';
   mode = 'break';
   minutes = 5;
   seconds = 0;
+  timeNode.innerHTML = String(minutes) + (seconds < 10 ? ':0' : ':') + String(seconds);
+  titleNode.innerHTML = String(minutes) + (seconds < 10 ? ':0' : ':') + String(seconds);
   ticking = false;
 }

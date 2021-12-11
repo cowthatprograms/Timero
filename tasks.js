@@ -27,14 +27,14 @@ function reloadTasks() {
 }
 
 function createTask() {
-  let taskName = window.prompt("Enter a task name:");
-  if (taskName == null) { return; }
+  let taskName = window.prompt("Enter the name of the task:");
+  if (!taskName) { return; }
   let taskDescription = window.prompt("Enter description:");
-  if (taskName == null) { return; }
+  if (!taskDescription) { return; }
   let taskDate = window.prompt("Enter the task deadline:");
-  if (taskName == null) { return; }
-  let taskTime = window.prompt("Enter completion time:");
-  if (taskName == null) { return; }
+  if (!taskDate) { return; }
+  let taskTime = window.prompt("Enter time it takes to complete the task:");
+  if (!taskTime) { return; }
   tasks[taskName] = {
     "description": taskDescription,
     "date": taskDate,

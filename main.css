@@ -60,6 +60,7 @@ body {
   font-weight: 400;
   color: #005278;
   font-size: 20px;
+  transition: 0.3s background-color;
 }
 
 button {
@@ -116,10 +117,14 @@ button:active {
   font-size: 30px;
   font-weight: bold;
   line-height: 0.5;
+  text-align: right;
+  float: left;
 }
 
 #info {
   font-family: "Lato", sans-serif;
-  line-height: 0.8;
+  line-height: 1;
   font-weight: 500;
+  text-align: right;
+  float:left;
 }
