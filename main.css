@@ -29,6 +29,7 @@
   padding: 16px;
   border-radius: 16px;
   background-color: #0ea8ed;
+  transition: 0.3s background-color;
 }
 
 .task-title {

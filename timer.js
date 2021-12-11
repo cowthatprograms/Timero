@@ -73,24 +73,41 @@ function startTimer() {
   clicked = true;
   if (mode == 'focused') {
     document.querySelector('body').style.backgroundColor = '#a7dbf2';
+    let all = document.getElementsByClassName('task');
+    for (let i = 0; i < all.length; i++) {
+      all[i].style.backgroundColor = '#0ea8ed';
+    }
   } else {
     document.querySelector('body').style.backgroundColor = '#cfffe5';
+    let all = document.getElementsByClassName('task');
+    for (let i = 0; i < all.length; i++) {
+      all[i].style.backgroundColor = '#35f08b';
+    }
   }
 }
 
 function pauseTimer() {
   ticking = false;
   document.querySelector('body').style.backgroundColor = '#f7b2ad';
+  let all = document.getElementsByClassName('task');
+  for (let i = 0; i < all.length; i++) {
+    all[i].style.backgroundColor = '#f7635e';
+  }
 }
 
 function focusMode() {
-  document.querySelector('body').style.backgroundColor = '#ed9a9a';
+  document.querySelector('body').style.backgroundColor = '#a7dbf2';
   mode = 'focused';
   minutes = 25;
   seconds = 0;
   timeNode.innerHTML = String(minutes) + (seconds < 10 ? ':0' : ':') + String(seconds);
   titleNode.innerHTML = String(minutes) + (seconds < 10 ? ':0' : ':') + String(seconds);
   ticking = false;
+
+  let all = document.getElementsByClassName('task');
+  for (let i = 0; i < all.length; i++) {
+    all[i].style.backgroundColor = '#0ea8ed';
+  }
 }
 
 function breakMode() {
@@ -101,4 +118,9 @@ function breakMode() {
   timeNode.innerHTML = String(minutes) + (seconds < 10 ? ':0' : ':') + String(seconds);
   titleNode.innerHTML = String(minutes) + (seconds < 10 ? ':0' : ':') + String(seconds);
   ticking = false;
+
+  let all = document.getElementsByClassName('task');
+  for (let i = 0; i < all.length; i++) {
+    all[i].style.backgroundColor = '#35f08b';
+  }
 }
