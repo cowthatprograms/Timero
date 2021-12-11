@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <title>25:00</title>
+  
+  <link rel="stylesheet" href="main.css">
+  <script src="tasks.js"></script>
+  <script src="timer.js"></script>
+</head>
+<body>
+  <div id="header">
+    <img src="logo.png" id="logo">
+    <h1 id="quote"></h1>
+  </div>
+  <div id="main">
+
+    <div id="left">
+      <div id="tasks">
+        
+      </div>
+      <div class="task-buttons">
+        <button onclick="createTask()" style="margin-right: 15px;">Create Task</button>
+        <button onclick="removeTasks()" style="margin-left: 15px;">Clear Tasks</button>
+      </div>
+    </div>
+
+    <div id="right">
+      <div class="modes">
+        <button onclick="focusMode()" style="margin-right: 15px;">Focus</button>
+        <button onclick="breakMode()" style="margin-left: 15px;">Break</button>
+      </div>
+      <div id="timer">
+        <p id="time">25:00</p>
+      </div>
+      <div class="controls">
+        <button onclick="startTimer()" style="margin-right: 15px;">Start</button>
+        <button onclick="pauseTimer()" style="margin-left: 15px;">Pause</button>
+      </div>
+
+      <div id="session-report">
+        <p id="session-title">Session Report</p>
+        <div id="info">
+          <p id="completed-tasks">Completed tasks: 0</p>
+          <p id="total-time">Total time: 00:00</p>
+          <p id="focused-time">Focused time: 00:00</p>
+          <p id="break-time">Break time: 00:00</p>
+          <p id="wasted-time">Wasted time: 00:00</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
